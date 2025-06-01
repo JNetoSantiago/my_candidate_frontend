@@ -1,0 +1,53 @@
+{
+  "arrowParens": "always",
+  "bracketSameLine": false,
+  "bracketSpacing": true,
+  "embeddedLanguageFormatting": "auto",
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "importOrder": [
+    "<BUILTIN_MODULES>",
+    "^react$",
+    "^react/(.*)$",
+    "^react-dom$",
+    "^react-dom/(.*)$",
+    "^next$",
+    "^next/(.*)$",
+    "^next-(.*)$",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "<TYPES>",
+    "",
+    "^@/app$",
+    "^@/app/(.*)$",
+    "^@/components$",
+    "^@/components/(.*)$",
+    "^@/lib$",
+    "^@/lib/(.*)$",
+    "",
+    "^[.]"
+  ],
+  "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
+  "insertPragma": false,
+  "jsxSingleQuote": false,
+  "overrides": [
+    {
+      "files": ["**/*.json"],
+      "options": {
+        "useTabs": false
+      }
+    }
+  ],
+  "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
+  "printWidth": 120,
+  "proseWrap": "always",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": false,
+  "singleAttributePerLine": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "useTabs": true,
+  "tailwindFunctions": ["clsx", "cn", "cva"]
+}
