@@ -5,7 +5,6 @@ import UploadModal from "@/components/upload-modal"
 
 import { getPoliticians } from "@/lib/actions/get-politicians"
 import { fetchDashboardStats } from "@/lib/actions/fetch-dashboard-stats"
-import { fetchExpensesChart } from "@/lib/actions/fetch-expenses-chart"
 
 export default async function Page() {
 

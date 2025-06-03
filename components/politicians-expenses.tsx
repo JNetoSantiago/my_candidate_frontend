@@ -22,7 +22,7 @@ import {
 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { useRouter, useSearchParams } from "next/navigation"
+import { useRouter } from "next/navigation"
 
 interface Expense {
   id: string
@@ -52,7 +52,6 @@ export default function PoliticianExpenses({
   politicianId: string
 }) {
   const router = useRouter()
-  const searchParams = useSearchParams()
 
   const goToPage = (page: number) => {
     router.push(`/politician/${politicianId}?page=${page}`)

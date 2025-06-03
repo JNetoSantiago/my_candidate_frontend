@@ -1,7 +1,7 @@
 import { SiteHeader } from "@/components/site-header"
 import { getPolitician } from "@/lib/actions/fetch-politician-by-id"
 import PoliticianExpenses from "@/components/politicians-expenses"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default async function Politician({ params, searchParams }: {
   params: { id: string },
