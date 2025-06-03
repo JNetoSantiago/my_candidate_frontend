@@ -1,4 +1,3 @@
-import { ChartAreaInteractive } from "@/components/chart-area-interactive"
 import PoliticiansTable from "@/components/politicians-table"
 import { SectionCards } from "@/components/section-cards"
 import { SiteHeader } from "@/components/site-header"
@@ -12,7 +11,6 @@ export default async function Page() {
 
 	const politicians = await getPoliticians()
 	const stats = await fetchDashboardStats()
-	const chartData = await fetchExpensesChart()
 
 	return (
 		<div className="flex flex-col min-h-screen">
@@ -22,9 +20,8 @@ export default async function Page() {
 					<div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
 						<SectionCards stats={stats} />
 						<div className="px-4 lg:px-6">
-							<ChartAreaInteractive data={chartData} />
+							<PoliticiansTable politicians={politicians} />
 						</div>
-						<PoliticiansTable politicians={politicians} />
 					</div>
 				</div>
 			</div>

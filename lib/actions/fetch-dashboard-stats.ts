@@ -1,7 +1,9 @@
 'use server'
 
 export async function fetchDashboardStats() {
-  const res = await fetch('http://localhost:3000/api/v1/dashboard_stats', {
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL
+
+  const res = await fetch(`${baseUrl}/api/v1/dashboard_stats`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

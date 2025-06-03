@@ -6,6 +6,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import Link from "next/link"
 
 export default function PoliticiansTable({ politicians }) {
   console.log("Politicians data:", politicians)
@@ -16,9 +17,8 @@ export default function PoliticiansTable({ politicians }) {
           <TableRow className="hover:bg-transparent">
             <TableHead>Name</TableHead>
             <TableHead>Partido</TableHead>
-            <TableHead>Location</TableHead>
-            <TableHead>Status</TableHead>
-            <TableHead className="text-right">Balance</TableHead>
+            <TableHead>Identificador Externo</TableHead>
+            <TableHead>Total de despesas</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -42,9 +42,11 @@ export default function PoliticiansTable({ politicians }) {
                 </div>
               </TableCell>
               <TableCell>{item.attributes.party}-{item.attributes.state}</TableCell>
-              <TableCell>{item.location}</TableCell>
-              <TableCell>{item.status}</TableCell>
-              <TableCell className="text-right">{item.balance}</TableCell>
+              <TableCell>{item.attributes.external_id}</TableCell>
+              <TableCell><Link href={`/politician/${item.id}`}>{Number(item.attributes.expenses_total).toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              })}</Link></TableCell>
             </TableRow>
           ))}
         </TableBody>
