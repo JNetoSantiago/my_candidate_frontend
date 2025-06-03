@@ -3,12 +3,12 @@ import { getPolitician } from "@/lib/actions/fetch-politician-by-id"
 import PoliticianExpenses from "@/components/politicians-expenses"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
-export default async function Politician({ params, searchParams }: {
+export default async function PoliticianPage({ params, searchParams }: {
   params: { id: string },
   searchParams?: { page?: string }
 }) {
   const page = searchParams?.page || "1"
-  const politician = await getPolitician(params.id, page)
+  const politician = await getPolitician(params.id, Number(page))
 
   return (
     <div className="flex flex-col min-h-screen">

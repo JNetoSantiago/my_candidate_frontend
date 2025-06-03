@@ -12,7 +12,6 @@ import {
   getPaginationRowModel,
   getSortedRowModel,
   PaginationState,
-  Row,
   SortingState,
   useReactTable,
   VisibilityState,
@@ -177,7 +176,7 @@ const columns: ColumnDef<Item>[] = [
       <Badge
         className={cn(
           row.getValue("status") === "Inactive" &&
-            "bg-muted-foreground/60 text-primary-foreground"
+          "bg-muted-foreground/60 text-primary-foreground"
         )}
       >
         {row.getValue("status")}
@@ -513,7 +512,7 @@ export default function Component() {
                         <div
                           className={cn(
                             header.column.getCanSort() &&
-                              "flex h-full cursor-pointer items-center justify-between gap-2 select-none"
+                            "flex h-full cursor-pointer items-center justify-between gap-2 select-none"
                           )}
                           onClick={header.column.getToggleSortingHandler()}
                           onKeyDown={(e) => {
@@ -631,8 +630,8 @@ export default function Component() {
               {Math.min(
                 Math.max(
                   table.getState().pagination.pageIndex *
-                    table.getState().pagination.pageSize +
-                    table.getState().pagination.pageSize,
+                  table.getState().pagination.pageSize +
+                  table.getState().pagination.pageSize,
                   0
                 ),
                 table.getRowCount()
@@ -720,7 +719,7 @@ export default function Component() {
   )
 }
 
-function RowActions({ row }: { row: Row<Item> }) {
+function RowActions() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
